@@ -1,16 +1,16 @@
 from instabot import Bot
 import os
 import glob
-
+import cred
 
 files = glob.glob('config/olagmerie_uuid_and_cookie.json')
 for f1 in files:
     os.remove(f1)
 
-
+config = cred.load()
 
 bot = Bot()
-bot.login(username = '',  password = '')
+bot.login(username = config['login'],  password = config['password'])
 use_cookie = False
 
 

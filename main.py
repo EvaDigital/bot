@@ -1,9 +1,12 @@
 import telebot
 from telebot import types
+import cred
 
 import parser
 
-bot = telebot.TeleBot('')
+config = cred.load()
+
+bot = telebot.TeleBot(config['token'])
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
