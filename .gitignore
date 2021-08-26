@@ -1,0 +1,6 @@
+*.log
+*.json
+.DS_Store
+__pycache__
+config/*.txt
+*.checkpoint
