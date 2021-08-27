@@ -43,12 +43,9 @@ try:
     # modul = "Место: " +str(location_modul)+   "\n\nОписание: " +str(caption_modul)
         
     # info_modul = """ INSERT INTO clubs (ID, PLASE, INFO)  VALUES (1, '{location_modul}', '{caption_modul}')"""
-    cursor.execute("INSERT INTO clubs (ID, PLASE, INFO) VALUES (1, %s, %s)", (location_modul, caption_modul))
+    cursor.execute("UPDATE clubs SET PLASE = %s, INFO = %s WHERE ID = 1", (location_modul, caption_modul))
     connection.commit()
-    print("1 запись успешно вставлена")
-    
-
-       
+    print("1 запись успешно вставлена")   
         
 
 
@@ -65,7 +62,7 @@ try:
 
     # hide = "Место: " +str(location_hide)+   "\n\nОписание: " +str(caption_hide)
 
-    cursor.execute("INSERT INTO clubs (ID, PLASE, INFO) VALUES (2, %s, %s)", (location_hide, caption_hide))
+    cursor.execute("UPDATE clubs SET PLASE = %s, INFO = %s WHERE ID = 2", (location_hide, caption_hide))
     connection.commit()
     print("2 запись успешно вставлена")
 
@@ -83,7 +80,7 @@ try:
 
     # lo_fi = "Место: " +str(location_lo_fi)+   "\n\nОписание: " +str(caption_lo_fi)
 
-    cursor.execute("INSERT INTO clubs (ID, PLASE, INFO) VALUES (3, %s, %s)", (location_lo_fi, caption_lo_fi))
+    cursor.execute("UPDATE clubs SET PLASE = %s, INFO = %s WHERE ID = 3", (location_lo_fi, caption_lo_fi))
     connection.commit()
     print("3 запись успешно вставлена")
 
@@ -101,7 +98,7 @@ try:
 
     # Emotion = "Место: " +str(location_Emotion)+   "\n\nОписание: " +str(caption_Emotion)
 
-    cursor.execute("INSERT INTO clubs (ID, PLASE, INFO) VALUES (4, %s, %s)", (location_Emotion, caption_Emotion))
+    cursor.execute("UPDATE clubs SET PLASE = %s, INFO = %s WHERE ID = 4", (location_Emotion, caption_Emotion))
     connection.commit()
     print("4 запись успешно вставлена")
    
