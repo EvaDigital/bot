@@ -1,12 +1,13 @@
 import telebot
 from telebot import types
 import cred
+import operations_db
 
-import parser
 
 config = cred.load()
 
 bot = telebot.TeleBot(config['token'])
+
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
@@ -67,16 +68,16 @@ def callback_inline(call):
     try:
         if call.message:
             if call.data == 'Modul':
-                bot.send_message(call.message.chat.id, parser.modul)
+                bot.send_message(call.message.chat.id, "Место: " + operations_db.place_modul + "\n\n\n" + "О мероприятии: \n" + operations_db.info_modul)
 
             elif call.data == 'Hide':
-                bot.send_message(call.message.chat.id, parser.hide)
+                bot.send_message(call.message.chat.id, "Место: " + operations_db.place_hide + "\n\n\n" + "О мероприятии: \n" + operations_db.info_hide)
 
             elif call.data == 'Lo-Fi':
-                bot.send_message(call.message.chat.id, parser.lo_fi)
+                bot.send_message(call.message.chat.id, "Место: " + operations_db.place_lofi + "\n\n\n" + "О мероприятии: \n" + operations_db.info_lofi)
                 
             elif call.data == 'Emotion':
-                bot.send_message(call.message.chat.id, parser.Emotion)
+                bot.send_message(call.message.chat.id, "Место: " + operations_db.place_emotion + "\n\n\n" + "О мероприятии: \n" + operations_db.info_emotion)
 
 
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message.id, text="А спать хочешь?",
